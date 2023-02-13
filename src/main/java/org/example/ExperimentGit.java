@@ -1,5 +1,10 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.*;
+import java.util.logging.Logger;
+
 public class ExperimentGit {
 
 
@@ -8,8 +13,13 @@ public class ExperimentGit {
         test();
     }
     public static void test(){
-        System.out.println("the new name is new");
-        
+        List<String> name=new ArrayList<>();
+        name.add("ramesh");
+        name.add("suresh");
+        name.add("ravesh");
+       String peoples=  String.format("the name one is %s",name);
+        System.out.println("total names are:"+peoples);
+
     }
 
 }
