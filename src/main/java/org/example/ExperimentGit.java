@@ -2,7 +2,6 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.*;
 import java.util.logging.Logger;
 
 public class ExperimentGit {
@@ -17,6 +16,7 @@ public class ExperimentGit {
         name.add("ramesh");
         name.add("suresh");
         name.add("ravesh");
+        name.add("pavesh");
        String peoples=  String.format("the name one is %s",name);
         System.out.println("total names are:"+peoples);
 
