@@ -17,7 +17,6 @@ public class ExperimentGit {
         name.add("suresh");
         name.add("ravesh");
         name.add("pavesh");
-        name.add("sukesh");
        String peoples=  String.format("the name one is %s",name);
         System.out.println("total names are:"+peoples);
         for(String n:name){
