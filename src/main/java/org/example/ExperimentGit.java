@@ -19,6 +19,9 @@ public class ExperimentGit {
         name.add("pavesh");
        String peoples=  String.format("the name one is %s",name);
         System.out.println("total names are:"+peoples);
+        for(String n:name){
+            System.out.println( n.toLowerCase());
+        }
 
     }
 
