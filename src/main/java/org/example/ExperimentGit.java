@@ -22,9 +22,6 @@ public class ExperimentGit {
          for(String people:name){
              System.out.println(people.equalsIgnoreCase("pavesh"));
          }
-        for(String n:name){
-            System.out.println( n.toLowerCase());
-        }
 
     }
 
