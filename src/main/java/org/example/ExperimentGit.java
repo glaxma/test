@@ -2,6 +2,9 @@ package org.example;
 
 import java.util.*;
 import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ExperimentGit {
 
@@ -20,12 +23,19 @@ public class ExperimentGit {
 
         System.out.println( map);
         System.out.println( map.containsValue("ravi"));
+        
 
-
-
-
-
-
+        List<String> name=new ArrayList<>();
+        name.add("ramesh");
+        name.add("suresh");
+        name.add("ravesh");
+        name.add("pavesh");
+       String peoples=  String.format("the name one is %s",name);
+        System.out.println("total names are:"+peoples);
+         for(String people:name){
+             System.out.println(people.equalsIgnoreCase("pavesh"));
+         }
+         //test
 
     }
 
