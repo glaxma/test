@@ -22,6 +22,7 @@ public class ExperimentGit {
          for(String people:name){
              System.out.println(people.equalsIgnoreCase("pavesh"));
          }
+         //test
 
     }
 
