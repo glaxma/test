@@ -23,5 +23,7 @@ public class ExceptionHandling {
 
 //    int a[]=new int[5];
 //    a[10]=50; //ArrayIndexOutOfBoundsException
+
+    String name="";
 }
 
