@@ -36,6 +36,7 @@ public class ExperimentGit {
              System.out.println(people.equalsIgnoreCase("pavesh"));
          }
          //test
+        String user="whoooo";
 
     }
 
