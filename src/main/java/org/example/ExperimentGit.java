@@ -41,8 +41,7 @@ public class ExperimentGit {
         //test
         String user = "whoooo";
         String happy = "happy";
-        String sa = "sad";
-
+   
     }
 
 }
