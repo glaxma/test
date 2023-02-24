@@ -25,6 +25,7 @@ public class ExperimentGit {
         System.out.println( map.containsValue("ravi"));
 
         System.out.println("test1");
+        String li="List";
     }
     
 
