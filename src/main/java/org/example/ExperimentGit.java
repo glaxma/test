@@ -32,16 +32,17 @@ public class ExperimentGit {
         name.add("ravesh");
         name.add("pavesh");
 
-       String peoples=  String.format("the name one is %s",name);
-        System.out.println("total names are:"+peoples);
-         for(String people:name){
-             System.out.println(people.equalsIgnoreCase("pavesh"));
-         }
+        String peoples = String.format("the name one is %s", name);
+        System.out.println("total names are:" + peoples);
+        for (String people : name) {
+            System.out.println(people.equalsIgnoreCase("pavesh"));
+        }
         //test
         String happy = "happy";
+        String name1 = "test";
 
 
     }
-    
+
 
 }
