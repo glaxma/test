@@ -39,6 +39,7 @@ public class ExperimentGit {
          }
         //test
         String happy = "happy";
+         String opposite="Sad";
 
 
     }
