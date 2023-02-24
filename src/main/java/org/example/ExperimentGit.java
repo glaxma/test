@@ -40,7 +40,6 @@ public class ExperimentGit {
         String happy = "happy";
 
 
-        System.out.println("test1");
     }
 
 
