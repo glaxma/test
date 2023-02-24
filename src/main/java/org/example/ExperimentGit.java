@@ -41,7 +41,6 @@ public class ExperimentGit {
 
 
         System.out.println("test1");
-        String li="List";
     }
 
 
