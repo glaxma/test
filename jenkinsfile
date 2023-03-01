@@ -1,9 +1,17 @@
 pipeline {
-node{
-   stage("vcs"){
-  git url :https://github.com/glaxma/test.git
-branch :feature/List
- poll:true
+node(){
+  git url :'https://github.com/glaxma/test.git'
+   branch :'feature/List'
+   poll:true
    }
+ stage('archive the artifacts') {
+        archiveArtifacts onlyIfSuccessful: true,
+            artifacts: '**/target/gameoflife.war',
+            allowEmptyArchive: false
+    }
+    stage('show the test results') {
+        junit testResults: '**/surefire-reports/TEST-*.xml',
+              allowEmptyResults: true
+    }
 }
 
