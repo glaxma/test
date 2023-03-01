@@ -1,9 +1,11 @@
 pipeline {
-node('master'){
+agent any
+stages {
+    stage ('Build') {
   git url :'https://github.com/glaxma/test.git'
    branch :'feature/List'
    poll:true
    }
-
+}
 }
 
