@@ -1,0 +1,17 @@
+pipeline {
+node{
+   stage("vcs"){
+  git url :https://github.com/glaxma/test.git
+branch :feature/List
+ poll:true
+   }
+   stage("build"){
+      javac ExceptionHandling.java
+   }
+   stage("results"){
+       junit **/target/surefire-reports/TEST-*.xml
+        archiveArtifacts target/*.jar
+   }
+   }
+}
+
