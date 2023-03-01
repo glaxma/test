@@ -5,13 +5,5 @@ node{
 branch :feature/List
  poll:true
    }
-   stage("build"){
-      javac ExceptionHandling.java
-   }
-   stage("results"){
-       junit **/target/surefire-reports/TEST-*.xml
-        archiveArtifacts target/*.jar
-   }
-   }
 }
 
