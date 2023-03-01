@@ -4,6 +4,5 @@ node() {
    branch :'feature/List'
    poll:true
    }
-}
 
 
