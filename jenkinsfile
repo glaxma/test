@@ -8,6 +8,12 @@ stages{
   echo 'hello world'
  }
  }
+ stage('results execution'){
+ steps{
+    junit testResults: '**/surefire-reports/TEST-*.xml',
+    allowEmptyResults: true
+ }
+ }
 }
 post{
 always {
