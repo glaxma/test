@@ -3,6 +3,9 @@
 pipeline{
 agent any
 triggers { pollSCM('H/2 * * * *') }
+parameters{
+choice(name: 'MAVEN_GOALS',choices:['verify','clean','test','package'],description: 'added maven goals')
+}
 stages{
  stage('program'){
  steps{
