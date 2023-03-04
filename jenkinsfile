@@ -10,8 +10,8 @@ stages{
  stage('program'){
  steps{
   echo 'hello world'
-  sh 'mvn clean'
-  sh "mvn ${params.MAVEN_GOALS}"
+  bat 'mvn clean'
+  bat "mvn ${params.MAVEN_GOALS}"
  }
  }
  stage('results execution'){
