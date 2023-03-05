@@ -14,6 +14,13 @@ stages{
   bat "mvn ${params.MAVEN_GOALS}"
  }
  }
+ stage('sonar analysis'){
+ steps{
+  withSonarQubeEnv('Sonar_Cloud'){
+  bat 'mvn clean package sonar:sonar -Dsonar.organization=sonar-orga'
+  }
+ }
+ }
  stage('results execution'){
  steps{
     junit testResults: '**/surefire-reports/TEST-*.xml',
