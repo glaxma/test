@@ -7,13 +7,55 @@ parameters{
 choice(name: 'MAVEN_GOALS',choices:['verify','clean','test','package'],description: 'added maven goals')
 }
 stages{
+    stage('clone'){
+        steps{
+            git branch:'feature/List', url:'https://github.com/glaxma/test.git'
+        }
+    }
  stage('program'){
  steps{
   echo 'hello world'
-  bat 'mvn clean'
-  bat "mvn ${params.MAVEN_GOALS}"
+//   bat 'mvn clean'
+//   bat "mvn ${params.MAVEN_GOALS}"
  }
  }
+  stage ('Artifactory configuration') {
+            steps {
+                rtServer (
+                    id: "ARTIFACTORY_SERVER",
+                    url: 'https://jfrog5948.jfrog.io//artifactory',
+                    credentialsId: 'JFROG_CLOUD_ADMIN'
+                )
+
+                rtMavenDeployer (
+                    id: "MAVEN_DEPLOYER",
+                    serverId: "ARTIFACTORY_SERVER",
+                    releaseRepo: 'libs-release',
+                    snapshotRepo: 'libs-snapshot'
+                )
+
+                rtMavenResolver (
+                    id: "MAVEN_RESOLVER",
+                    serverId: "ARTIFACTORY_SERVER",
+                    releaseRepo: 'libs-release',
+                    snapshotRepo: 'libs-snapshot'
+                )
+            }
+        }
+        stage('Maven Exec'){
+             steps {
+                rtMavenRun (
+                    tool: 'M3',
+                    pom: 'pom.xml',
+                    goals: 'clean install',
+                    deployerId: "MAVEN_DEPLOYER"
+
+                )
+                rtPublishBuildInfo (
+                    serverId: "ARTIFACTORY_SERVER"
+                )
+            }
+        }
  stage('sonar analysis'){
  steps{
   withSonarQubeEnv('Sonar_Cloud'){
